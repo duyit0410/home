@@ -1,35 +1,69 @@
-# Cross-Platform OS UI (React + Vite + TypeScript)
+# React + TypeScript + Vite
 
-Một hệ thống giao diện **OS** được xây dựng bằng **TypeScript** (React + Vite) kết hợp với core native của **Android** và **iOS**, hướng tới trải nghiệm mượt mà trên **điện thoại, tablet và máy tính**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ✨ Tính năng chính
+Currently, two official plugins are available:
 
-- **Hiển thị ứng dụng** trực quan.
-- **Kéo & thả (Drag & Drop)** để sắp xếp ứng dụng hoặc nhóm ứng dụng.
-- **Vuốt chuyển trang (Swipe Page)** mượt mà giữa các màn hình.
-- **Đa nền tảng**: tối ưu cho điện thoại, tablet và máy tính.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🏗️ Kiến trúc
+## Expanding the ESLint configuration
 
-Dự án áp dụng **Domain-Driven Design (DDD)** để tổ chức mã nguồn, giúp dễ mở rộng và bảo trì lâu dài.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🔧 Công nghệ sử dụng
+```js
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- **React + Vite + TypeScript**: phát triển nhanh, type-safe, hỗ trợ HMR.
-- **TailwindCSS**: xây dựng UI nhanh, linh hoạt và responsive.
-- **Zustand**: quản lý state đơn giản, hiệu quả và tối ưu hiệu năng.
-- **Native Bridge** với Android/iOS.
-- **Responsive UI** cho nhiều kích thước màn hình.
+      // Remove tseslint.configs.recommended and replace with this
+      ...tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      ...tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      ...tseslint.configs.stylisticTypeChecked,
 
-## 🚀 Cài đặt & Chạy thử
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-```bash
-# Cài dependencies
-npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-# Chạy development server
-npm run dev
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-# Build production
-npm run build
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
