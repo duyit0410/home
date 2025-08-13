@@ -1,12 +1,34 @@
-# React + Vite
+# Cross-Platform OS UI (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Một hệ thống giao diện **OS** được xây dựng bằng **JavaScript** (React + Vite) kết hợp với core native của **Android** và **iOS**, hướng tới trải nghiệm mượt mà trên **điện thoại, tablet và máy tính**.
 
-Currently, two official plugins are available:
+## ✨ Tính năng chính
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hiển thị ứng dụng** trực quan.
+- **Kéo & thả (Drag & Drop)** để sắp xếp ứng dụng hoặc nhóm ứng dụng.
+- **Vuốt chuyển trang (Swipe Page)** mượt mà giữa các màn hình.
+- **Đa nền tảng**: tối ưu cho điện thoại, tablet và máy tính.
 
-## Expanding the ESLint configuration
+## 🏗️ Kiến trúc
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Dự án áp dụng **Domain-Driven Design (DDD)** để tổ chức mã nguồn, giúp dễ mở rộng và bảo trì lâu dài.
+
+## 🔧 Công nghệ sử dụng
+
+- **React + Vite**: phát triển nhanh, hỗ trợ HMR.
+- **JavaScript / TypeScript**.
+- **Native Bridge** với Android/iOS.
+- **Responsive UI** cho nhiều kích thước màn hình.
+
+## 🚀 Cài đặt & Chạy thử
+
+```bash
+# Cài dependencies
+npm install
+
+# Chạy development server
+npm run dev
+
+# Build production
+npm run build
+```
