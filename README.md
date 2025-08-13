@@ -1,6 +1,6 @@
-# Cross-Platform OS UI (React + Vite)
+# Cross-Platform OS UI (React + Vite + TypeScript)
 
-Một hệ thống giao diện **OS** được xây dựng bằng **JavaScript** (React + Vite) kết hợp với core native của **Android** và **iOS**, hướng tới trải nghiệm mượt mà trên **điện thoại, tablet và máy tính**.
+Một hệ thống giao diện **OS** được xây dựng bằng **TypeScript** (React + Vite) kết hợp với core native của **Android** và **iOS**, hướng tới trải nghiệm mượt mà trên **điện thoại, tablet và máy tính**.
 
 ## ✨ Tính năng chính
 
@@ -15,8 +15,9 @@ Dự án áp dụng **Domain-Driven Design (DDD)** để tổ chức mã nguồn
 
 ## 🔧 Công nghệ sử dụng
 
-- **React + Vite**: phát triển nhanh, hỗ trợ HMR.
-- **JavaScript / TypeScript**.
+- **React + Vite + TypeScript**: phát triển nhanh, type-safe, hỗ trợ HMR.
+- **TailwindCSS**: xây dựng UI nhanh, linh hoạt và responsive.
+- **Zustand**: quản lý state đơn giản, hiệu quả và tối ưu hiệu năng.
 - **Native Bridge** với Android/iOS.
 - **Responsive UI** cho nhiều kích thước màn hình.
 
